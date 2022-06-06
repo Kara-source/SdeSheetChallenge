@@ -1,0 +1,28 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        // Write your code here..
+        int n=matrix.length;
+        int m=matrix[0].length;
+        int[] rowzero=new int[n];
+        int[] colzero=new int[m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(matrix[i][j]==0){
+                    rowzero[i]=-1;
+                    colzero[j]=-1;
+                }
+            }
+        }
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(rowzero[i]==-1||colzero[j]==-1){
+                    matrix[i][j]=0;
+                }
+            }
+        }
+    }
+
+}
