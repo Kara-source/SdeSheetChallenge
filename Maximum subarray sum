@@ -1,0 +1,22 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Solution {
+	
+	public static long maxSubarraySum(int[] arr, int n) {
+		// write your code here
+        long maxsum=Long.MIN_VALUE;
+        if(n==0) return 0;
+        long currsum=0;
+        for(int i=0;i<n;i++){
+            currsum+=arr[i];
+            maxsum=Math.max(maxsum,currsum);
+            if(currsum<0) currsum=0; 
+            
+            //if maxsum is desired to be zero when maxsum actually is negative
+            maxsum=Math.max(maxsum,currsum);
+        }
+        return maxsum;
+	}
+    
+}
