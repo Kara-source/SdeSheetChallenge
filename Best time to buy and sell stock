@@ -14,8 +14,6 @@ public class Solution{
             minPrice=Math.min(minPrice,price);
             maxProfit=Math.max(maxProfit,price-minPrice);
         }
-        
-        if(maxProfit<0) maxProfit=0;
         return maxProfit;
     }
 }
