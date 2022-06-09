@@ -1,0 +1,16 @@
+import java.util.* ;
+import java.io.*; 
+import java.util.ArrayList;
+
+public class Solution{
+    public static int findDuplicate(ArrayList<Integer> arr, int n){
+        // Write your code here.
+        Set<Integer> visited=new HashSet<Integer>();
+        int currInd=arr.get(0);
+        while(!visited.contains(currInd)){
+            visited.add(currInd);
+            currInd=arr.get(currInd);
+        }
+        return currInd;
+    }
+}
